@@ -85,7 +85,7 @@ type MMS struct {
 	Address				PhoneNumber		`xml:"address,string,attr"`
 	MessageClassifier	string			`xml:"m_cls,attr"`
 	MessageSize			string			`xml:"m_size,attr"`
-	Parts				[]Part			`xml:"parts>part"`
+	Parts				[]Part			`xml:"parts"`
 	Addresses			[]Address		`xml:"addrs>addr"`
 }
 
