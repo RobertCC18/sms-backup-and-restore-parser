@@ -64,6 +64,8 @@ func MMSOutput(m *smsbackuprestore.Messages, outputDir string) {
 		for e := range imgOutputErrors {
 			fmt.Printf("\t%q\n", e)
 		}
+	} else {
+		fmt.Println(imgOutputErrors)
 	}
 	fmt.Println("Finished decoding images")
 	fmt.Printf("%d images were identified and %d were successfully written to file\n", numImagesIdentified, numImagesSuccessfullyWritten)
