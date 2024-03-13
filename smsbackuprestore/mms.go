@@ -45,6 +45,7 @@ func DecodeImages(m *Messages, mainOutputDir string) (numImagesIdentified, numIm
 	for mmsIndex, mms := range m.MMS {
 		for partIndex, part := range mms.Parts {
 			numMessagesScanned++
+			fmt.Print(mms.Parts)
 			if strings.Contains(part.ContentType, "image/") {
 				numImagesIdentified++
 				outputImgFilename := part.ImageFileName(mmsIndex, partIndex)
@@ -58,7 +59,7 @@ func DecodeImages(m *Messages, mainOutputDir string) (numImagesIdentified, numIm
 					numImagesSuccessfullyWritten++
 				}
 			} else  {
-				fmt.Printf("Ignored type: %s", part.ContentType);
+				fmt.Printf("Ignored type: %s \n", part.ContentType);
 			}
 		}
 	}
