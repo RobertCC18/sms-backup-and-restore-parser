@@ -57,6 +57,8 @@ func DecodeImages(m *Messages, mainOutputDir string) (numImagesIdentified, numIm
 				} else {
 					numImagesSuccessfullyWritten++
 				}
+			} else  {
+				fmt.Printf("Ignored type: %s", part.ContentType);
 			}
 		}
 	}
