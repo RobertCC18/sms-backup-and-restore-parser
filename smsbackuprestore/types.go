@@ -80,6 +80,7 @@ type MMS struct {
 	ReadableDate		string			`xml:"readable_date,attr"`
 	ContactName			string			`xml:"contact_name,attr"`
 	Seen				BoolValue		`xml:"seen,string,attr"`
+	Type				string			`xml:"m_type,string,attr"`
 	FromAddress			PhoneNumber		`xml:"from_address,string,attr"`
 	Address				PhoneNumber		`xml:"address,string,attr"`
 	MessageClassifier	string			`xml:"m_cls,attr"`
