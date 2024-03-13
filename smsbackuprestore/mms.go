@@ -45,7 +45,7 @@ func DecodeImages(m *Messages, mainOutputDir string) (numImagesIdentified, numIm
 	for mmsIndex, mms := range m.MMS {
 		for partIndex, part := range mms.Parts {
 			numMessagesScanned++
-			fmt.Print(mms.Parts)
+			fmt.Print(len(mms.Parts))
 			if strings.Contains(part.ContentType, "image/") {
 				numImagesIdentified++
 				outputImgFilename := part.ImageFileName(mmsIndex, partIndex)
