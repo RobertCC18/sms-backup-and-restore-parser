@@ -61,12 +61,12 @@ func MMSOutput(m *smsbackuprestore.Messages, outputDir string) {
 	// decode and output mms images
 	fmt.Println("\nCreating images output...")
 	numImagesIdentified, numImagesSuccessfullyWritten, numMessagesScanned, imgOutputErrors := smsbackuprestore.DecodeImages(m, outputDir)
-	if imgOutputErrors != nil && len(imgOutputErrors) > 0 {
+	if len(imgOutputErrors) > 0 {
 		for e := range imgOutputErrors {
 			fmt.Printf("\t%q\n", e)
 		}
 	}
-	fmt.Printf("Scanned %d Messages", numMessagesScanned)
+	fmt.Printf("Scanned %d Messages\n", numMessagesScanned)
 	fmt.Println("Finished decoding images")
 	fmt.Printf("%d images were identified and %d were successfully written to file\n", numImagesIdentified, numImagesSuccessfullyWritten)
 	fmt.Println("Image file names are in format: <original file name (if known)>_<mms index>-<sms index>.<file extension>")
